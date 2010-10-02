@@ -1,4 +1,5 @@
 # exercise 3
+# added comment
 person1 = { :first => "John", :last => "Smith" }
 person2 = { :first => "Jane", :last => "Smith" }
 person3 = { :first => "Tommy", :last => "Smith" }
