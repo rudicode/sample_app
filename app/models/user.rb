@@ -1,0 +1,21 @@
+# == Schema Information
+# Schema version: 20101003111924
+#
+# Table name: users
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  email      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+class User < ActiveRecord::Base
+	attr_accessible :name, :email
+
+  validates :name, :presence => true
+  #same as => validates(:name, :presence => true)
+
+	validates :email, :presence => true
+
+end
