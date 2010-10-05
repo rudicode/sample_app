@@ -19,7 +19,7 @@ describe User do
 	it "should require an email address" do
 		no_email_user = User.new(@attr.merge(:email =>""))
 		no_email_user.should_not be_valid
-		 # above equivalent to:    no_emial_user.valid?.should_not == true
+		 # above equivalent to:    no_email_user.valid?.should_not == true
 	end
 
 	it "should reject names that are too long" do
@@ -29,7 +29,6 @@ describe User do
 	end
 	
 	it "should accept valid email addresses" do
-		# addresses = %w[user@foo.com THE_USER@foo.bar.org first.last@foo.jp]
 		addresses = %w[user@foo.com THE_USER@foo.bar.org first.last@foo.jp]
 		addresses.each do |address|
 			valid_email_user = User.new(@attr.merge(:email => address))
