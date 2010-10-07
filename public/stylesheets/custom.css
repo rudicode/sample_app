@@ -135,3 +135,7 @@ td.sidebar {
   margin-bottom: -15px;
 }
 
+/* style the form */
+div.field, div.actions {
+	margin-bottom: 10px;
+}
