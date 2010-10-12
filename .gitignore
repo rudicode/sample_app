@@ -9,4 +9,4 @@ doc/app
 *~
 .DS_Store
 webrat.log
-
+sample_app.kpf
