@@ -1,0 +1,17 @@
+Coding Notes
+
+
+Chapter 10
+
+10.2.1
+
+redirect_to signin_path, :notice => "Please sign in to access this page."
+
+more verbose of above would be
+
+flash[:notice] = "Please sign in to access this page."
+redirect_to signin_path
+
+This will also work for :error but not for :success
+
+
