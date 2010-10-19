@@ -12,10 +12,12 @@ namespace :db do
 		# to the local Rails environment, including the User model (and hence User.create!).
 		
 		Rake::Task['db:reset'].invoke
-		User.create!(:name => "Alex",
+		admin = User.create!(:name => "Alex",
 								 :email => "alex@example.com",
 								 :password => "123456",
 								 :password_confirmation => "123456")
+		admin.toggle!(:admin)
+		
 		99.times do |n|
 			name = Faker::Name.name
 			email = "example-#{n+1}@example.com"
