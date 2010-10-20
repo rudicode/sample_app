@@ -117,7 +117,19 @@ describe UsersController do
       get :new
       response.should have_selector("input[name='user[password_confirmation]'][type='password']")
     end
-  
+    
+    describe "for signed in users" do
+			# setup signed in user
+			before(:each) do
+				@user = test_sign_in(Factory(:user))
+			end
+			
+			it "should deny access" do
+				# check that signed in user is redirected to root_path
+				get :new
+				response.should redirect_to(root_path)
+			end
+		end
   end
 
 	# POST 'create'
