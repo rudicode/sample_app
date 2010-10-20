@@ -6,3 +6,7 @@ Factory.define :user do |user|
 	user.password_confirmation 	"foobar"
 end
 
+# define many sample users for testing
+Factory.sequence :email do |n|
+  "person-#{n}@example.com"
+end
