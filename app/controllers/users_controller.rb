@@ -69,10 +69,19 @@ class UsersController < ApplicationController
 		end
 		
 		def admin_user
+			# @user = User.find(params[:id])
 			redirect_to root_path unless current_user.admin?
+			
+			# admin user shold not be able to destroy themselves
+			#@user = User.find(params[:id])
+			#if current_user?(@user)
+			#	flash[:notice] = "Admin user can not delete themselves"
+			#	redirect_to(root_path)
+			#end
 		end
 		def signed_in_user
-			# redirect to root if user is not signed in
-			redirect_to root_path unless !signed_in?
+			# redirect to root if user is signed in
+			# redirect_to root_path unless !signed_in?
+			redirect_to root_path if signed_in?
 		end
 end

@@ -337,6 +337,11 @@ describe UsersController do
 				delete :destroy, :id => @user
 				response.should redirect_to(users_path)
 			end
+			
+			it "should not destroy self" do
+				# test that an admin user does not destroy themselves
+				
+			end
 		end
 	end
 end
