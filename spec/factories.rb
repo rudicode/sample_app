@@ -10,3 +10,9 @@ end
 Factory.sequence :email do |n|
   "person-#{n}@example.com"
 end
+
+# microposts which are associated with a user
+Factory.define :micropost do |micropost|
+  micropost.content "Foo bar"
+  micropost.association :user
+end
